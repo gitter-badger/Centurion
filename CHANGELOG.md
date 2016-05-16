@@ -1,3 +1,29 @@
+## 3.6.4
+- Grunt removed in favor on npm builder
+- Images moved to asset folder outside of `lib` directory
+- Centurion JS class based structure stubbed out.
+- JS no longer reliant on jQuery
+
+## 3.6.3
+- HoundCI integration for Sass
+- Fixed Sass issues reported by Hound:
+  - sorting properties, extends, and includes.
+  - sorting properties, extends and includes.
+  - changed class extends to placeholders
+  - removed `!importants`, commented out code, and leading zeros
+  - combining multiple variables to avoid errors in classes
+  - sorting properties and limited extend of grid base to desktop grid elements
+  - cleanup of form code
+  - space after variable names and commented out prefixes.
+  - sorting properties, extend and includes
+  - adding space before leading brace
+  - sorting properties in order and putting extends / includes at the top
+  - sorting extends and includes while turning off selector and nesting depth
+  - adding space before opening brace
+  - grunt-scss-lint added as a build dependency
+  - adjusting style linter
+
+
 ## 3.6.2
 - bug fix #27 when using `.ctn-center` would not center grid elements
 - Grunt Sass version updated in package.json to `1.1.0` to alleviate compile errors
