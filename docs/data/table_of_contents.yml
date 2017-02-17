@@ -1,0 +1,10 @@
+resources:
+  title: 'Resources'
+  base: 'resources/'
+  navigation:
+    - group: 'Resources'
+      pages:
+        - title: 'First'
+          link: resources
+        - title: 'Second'
+          link: second

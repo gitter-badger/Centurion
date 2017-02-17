@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+
+  <title>{{ data.pkg.projectName }} | {{ data.pkg.simpleDescription }}</title>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+  <meta property="og:title" content="{{ data.pkg.projectName }} | {{ data.pkg.simpleDescription }}"/>
+  <meta property="og:site_name" content="{{ data.pkg.projectName }}"/>
+  <meta property="og:description" content="{{ data.pkg.description }}"/>
+  <meta property="og:url" content="http://www.centurionframework.com/"/>
+  <meta property="og:image" content="img/apple-touch-icon-114x114.png"/>
+
+  <!-- <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="img/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff"> -->
+
+
+  <meta name="description" content="{{ data.pkg.meta_description }}"/>
+
+  <!-- Centurion Framework -->
+
+  <link rel="stylesheet" href="css/centurion.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <!--
+  <link rel="stylesheet" href="css/minified/centurion.min.css">
+  <link rel="stylesheet" href="css/minified/custom.min.css">
+  -->
+  <!-- End of Framework -->
+
+  <!-- GA CODE goes here -->
+
+</head>
+<body>
+
+<header>
+  <div class="ctn-container">
+    <div class="ctn-row">
+      <div class="ctn-grid-24">
+        <h1>{{ data.pkg.projectName }} <small>({{ data.pkg.version }})</small></h1>
+        <!-- <nav id="main" class="mobile">
+          <a href="index.html">Home</a>
+          <a href="resources.html">Resources</a>
+        </nav> -->
+
+        <nav id="main" class="mobile">
+        {% for title, sec in data.table_of_contents %}
+          {% if sec.base != "get-started" %}
+            <a href="{{ relativePath }}{{ sec.base }}">{{ sec.title }}</a>
+          {% endif %}
+          {% for ter in sec.navigation %}
+            {% for item in ter.pages %}
+              <a href="{{ relativePath }}{{ sec.base }}{{ item.link }}">{{ item.title }}</a>
+            {% endfor %}
+          {% endfor %}
+        {% endfor %}
+        </nav
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="page-content" class="clearfix">
+	<div class="ctn-container">
+
+    {% block page %}{% endblock %}
+
+
+    <div class="clear"></div>
+	</div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="ctn-container">
+    <div class="ctn-row">
+      <div class="ctn-grid-24">
+        <p>{{ data.pkg.projectName }} was created by <a href="{{ data.pkg.author_url }}" title="{{ data.pkg.author_name }}">{{ data.pkg.author_name }}</a>.
+        Licensed under <a href="http://www.gnu.org/licenses/gpl.html" rel="license">GPL</a>.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End of Footer -->
+
+<!-- Library Files -->
+<!-- <script src="js/libs/jquery-1.11.0.min.js"></script>
+<script src="js/libs/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/libs/prism.js"></script>
+<link rel="stylesheet" href="js/libs/prism.css" /> -->
+<!-- End of Library -->
+
+<!-- <script src="js/centurion.js"></script>
+<script src="js/grid-calculate.js"></script> -->
+
+<!--[if lt IE 9]><script src="js/libs/modernizr.2.8.3"></script><![endif]-->
+
+<!-- <script src="http://localhost:35729/livereload.js"></script> -->
+
+</body>
+</html>
